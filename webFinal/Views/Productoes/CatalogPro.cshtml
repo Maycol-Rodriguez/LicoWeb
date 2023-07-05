@@ -1,0 +1,25 @@
+﻿@model List<Producto> // Especifica el modelo de la vista
+
+@{
+    ViewData["Title"] = "Catálogo de Productos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    @foreach (var producto in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="@producto.ImagenUrl1" class="card-img-top catalog-image" alt="Imagen del producto">
+                <div class="card-body">
+                    <h5 class="card-title">@producto.NombreProd</h5>
+                    <p class="card-text">Precio: $@producto.PrecioVenta</p>
+                    <p class="card-text">Stock: @producto.Stock</p>
+                    <a href="@Url.Action("Details", "Productoes", new { id = producto.Idproducto })" class="btn btn-primary">Detalles</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

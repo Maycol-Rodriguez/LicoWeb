@@ -1,0 +1,27 @@
+﻿@model List<Cliente> // Especifica el modelo de la vista
+
+@{
+    ViewData["Title"] = "Catálogo de Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    @foreach (var cliente in Model)
+    {
+        <div class="col-md-4">
+            <div class="card py-4">
+                <img src="@cliente.ImagenC" class="rounded-circle card-img-top catalog-image" alt="Imagen del cliente">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@cliente.Nombres @cliente.Apellidos</h5>
+
+                    <p class="card-text fw-bold">Dirección: <span class="fw-normal"> @cliente.Direccion</span></p>
+
+                    <p class="card-text fw-bold">Email: <span class="fw-normal">@cliente.Email</span> </p>
+                    <a href="@Url.Action("Details", "Clientes", new { id = cliente.Dni })" class="btn btn-propio text-white">Detalle del cliente</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

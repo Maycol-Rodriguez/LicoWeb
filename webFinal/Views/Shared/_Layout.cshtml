@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Licoleria Maycohol</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/webFinal.styles.css" asp-append-version="true" />
+</head>
+<body >
+    <div style="background-color: #2b2e3d;position: fixed; top:0; left:0; height: 100vh; width: 300px; padding: 20px; transition: transform .3s ease-in-out; z-index: 9999">
+        <h1 class="text-center"><a class="navbar-brand text-xl text-white" asp-area="" asp-controller="Home" asp-action="Index">Licoreria MaycoHol</a></h1>
+        <img style="border-radius: 100%" class="img-fluid mt-xl-5" src="~/img/logo.jpg" alt="Logo" />
+        <div class="navbar-collapse collapse d-sm-inline">
+            <ul class="navbar-nav table-hover mt-xl-5">
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="Empleadoes" asp-action="Index">Trabajadores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="Proveedors" asp-action="Index">Proveedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="Categoriums" asp-action="Index">Categoria de Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="Productoes" asp-action="Index">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="Ventums" asp-action="Index">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white text-center" asp-area="" asp-controller="DetalleVentums" asp-action="Index">Detalle Venta</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin-left: 300px; margin-top:50px">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer  class="border-top footer text-muted">
+        <div style="margin-left: 300px" class="container">
+            &copy; 2023 - webFinal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<webFinal.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Trabajadores</h1>
+
+<p>
+    <a class="btn btn-propio text-white my-3" asp-action="Create">Agregar trabajador</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombresE) 
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidosE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sueldo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombresE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidosE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sueldo)
+            </td>
+            <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Idempleado">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Idempleado">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Idempleado">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

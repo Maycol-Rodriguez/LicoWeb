@@ -1,0 +1,36 @@
+﻿@model IEnumerable<webFinal.Models.Categorium>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Categoria de Licores</h1>
+<hr/>
+
+<p>
+    <a class="btn btn-propio text-white my-3" asp-action="Create">Crear Categoria</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCat)
+            </td>
+            <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Idcategoria">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Idcategoria">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Idcategoria">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: rgba(255,255,255,.3); /* Cambia el color de fondo en el hover */
+}
+
+.catalog-image {
+    width: 200px; /* Ancho deseado */
+    height: 200px; /* Alto deseado */
+    object-fit: cover; /* Ajusta la imagen manteniendo la proporción y recortando si es necesario */
+    display: block; /* Hace que la imagen sea un elemento en bloque */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+}
+
+.catalogpro -image {
+    width: 200px; /* Ancho deseado */
+    height: 200px; /* Alto deseado */
+    object-fit: cover; /* Ajusta la imagen manteniendo la proporción y recortando si es necesario */
+    display: block; /* Hace que la imagen sea un elemento en bloque */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+}
+
+.btn-propio {
+    background-color: #2b2e3d;
+}
+
+.btn-propio:hover {
+    background-color: rgba(43, 46, 61, 0.8);
+}

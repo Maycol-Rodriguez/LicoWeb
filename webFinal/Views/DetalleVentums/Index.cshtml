@@ -1,0 +1,54 @@
+﻿@model IEnumerable<webFinal.Models.DetalleVentum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Detalle de Ventas</h1>
+
+<p>
+    <a class="btn btn-propio text-white my-3" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdproductoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdventaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdproductoNavigation.Idproducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdventaNavigation.Idventa)
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Iddetalle">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Iddetalle">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Iddetalle">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

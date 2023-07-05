@@ -1,0 +1,53 @@
+﻿@model IEnumerable<webFinal.Models.Proveedor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Proveedores</h1>
+
+<p>
+    <a class="btn btn-propio text-white my-3" asp-action="Create">Agregar Proveedor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEmpresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmpresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Ruc">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Ruc">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Ruc">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

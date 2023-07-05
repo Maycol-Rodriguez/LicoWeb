@@ -1,0 +1,47 @@
+﻿@model IEnumerable<webFinal.Models.Ventum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ventas</h1>
+
+<p>
+    <a class="btn btn-propio text-white my-3" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DniNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdempleadoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DniNavigation.Dni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdempleadoNavigation.Idempleado)
+            </td>
+            <td>
+                    <a class="btn btn-success" -action="Edit" asp-route-id="@item.Idventa">Edit</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Idventa">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Idventa">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

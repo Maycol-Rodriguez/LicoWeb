@@ -1,0 +1,35 @@
+﻿@model webFinal.Models.Empleado
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles del Empleado</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombresE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombresE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApellidosE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApellidosE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sueldo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sueldo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-propio text-white" asp-action="Index">Regresar</a> |
+    <a class="btn btn-primary text-white" asp-action="Edit" asp-route-id="@Model?.Idempleado">Editar</a>
+</div>
