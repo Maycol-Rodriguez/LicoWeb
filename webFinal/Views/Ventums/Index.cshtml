@@ -7,7 +7,7 @@
 <h1>Ventas</h1>
 
 <p>
-    <a class="btn btn-propio text-white my-3" asp-action="Create">Create New</a>
+    <a class="btn btn-propio text-white my-3" asp-action="Create">Generar Venta</a>
 </p>
 <table class="table">
     <thead>
@@ -31,15 +31,15 @@
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DniNavigation.Dni)
+                @Html.DisplayFor(modelItem => item.DniNavigation.Nombres)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdempleadoNavigation.Idempleado)
+                @Html.DisplayFor(modelItem => item.IdempleadoNavigation.NombresE)
             </td>
             <td>
-                    <a class="btn btn-success" -action="Edit" asp-route-id="@item.Idventa">Edit</a> |
-                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Idventa">Details</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Idventa">Delete</a>
+                    <a class="btn btn-success" -action="Edit" asp-route-id="@item.Idventa">Editar</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Idventa">Detalles</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Idventa">Eliminar</a>
             </td>
         </tr>
 }
